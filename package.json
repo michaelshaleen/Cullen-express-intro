@@ -1,0 +1,19 @@
+{
+  "name": "cullen-express-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelshaleen/Cullen-express-intro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelshaleen/Cullen-express-intro/issues"
+  },
+  "homepage": "https://github.com/michaelshaleen/Cullen-express-intro#readme"
+}
