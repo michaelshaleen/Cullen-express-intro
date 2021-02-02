@@ -7,6 +7,12 @@ const app = express();
 //listen for network requests, takes in port(port is a number that can listen for)
 //  app.listen(number, callback function ) ; can plug in param with variables
 
+//INCANTATION:
+//Share anyfiles inside public folder
+// command comma shows settings in vs code
+// public is client side
+app.use(express.static('server/public'));
+
 app.listen(5000, function () {
   console.log('I listen', 5000);
 });
