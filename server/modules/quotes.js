@@ -1,3 +1,5 @@
+let index = 0;
+
 const quotesData = [
   {
     quote:
@@ -18,7 +20,6 @@ const quotesData = [
 ];
 
 function getNextQuote() {
-  let index = 0;
   // const quotesData = [
   //   {
   //     quote:
@@ -46,8 +47,13 @@ function getNextQuote() {
 }
 function addQuote(quoteData) {
   quotesData.push(quoteData);
+  console.log('Starting number of quotes:', quotesData.length);
   return true;
 }
-module.exports = { getNextQuote, addQuote };
+module.exports = {
+  getNextQuote: getNextQuote,
+  addQuote: addQuote,
+  quoteList: quotesData,
+};
 
 //issue loading server rn

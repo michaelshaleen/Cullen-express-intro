@@ -27,21 +27,33 @@ app.listen(5000, function () {
 // ...and try again
 //modules help keep things seperated and organized
 
+//get all the quotes
+//return array with all quotes in it
+
+app.get('/allTheQuotes', function (req, res) {
+  console.log('get all the quotes');
+  //send back the entire list of quotes
+  res.send(quotes.quoteList);
+});
+
 app.get('/quotes', function (req, res) {
   // quotes is a route or resource , address of what we're looking for
   // if user asks for quotes do the following
   console.log('get request for quotes');
-  res.send(quotes());
+  res.send(quotes.getNextQuote());
 });
+//user grab from server
 
 //must end with send or end for res.
 // body parser is middle ware, midware = takes input applies business logic, return stuff you can use
 // takes url encoded and gives your product
-
+//post grabs from client
 app.post('/quotes', (req, res) => {
+  // request, response
   let quote = req.body.quote_to_add;
   console.log(quote.author);
   console.log(quote.quote);
+  quotes.addQuote(quote);
   res.sendStatus(200); // reply, says hey that worked ex. 404 page not found, 500 check server
   //status code is between () above
   // TODO: Add to quotesData.
