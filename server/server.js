@@ -1,5 +1,6 @@
 const express = require('express');
 //console.log('express', express);
+const quotes = require('./modules/quotes'); //grabbing quotes from modules
 
 //creat our app, app is object with functions in it
 const app = express();
@@ -25,3 +26,14 @@ app.listen(5000, function () {
 // killall -9 node
 // ...and try again
 //modules help keep things seperated and organized
+
+app.get('/quotes', function (req, res) {
+  // quotes is a route or resource , address of what we're looking for
+  // if user asks for quotes do the following
+  console.log('get request for quotes');
+  res.send(quotes());
+});
+
+//must end with send or end for res.
+// body parser is middle ware, midware = takes input applies business logic, return stuff you can use
+// takes url encoded and gives your product
