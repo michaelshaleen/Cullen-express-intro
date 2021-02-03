@@ -37,3 +37,16 @@ app.get('/quotes', function (req, res) {
 //must end with send or end for res.
 // body parser is middle ware, midware = takes input applies business logic, return stuff you can use
 // takes url encoded and gives your product
+
+app.post('/quotes', (req, res) => {
+  let quote = req.body.quote_to_add;
+  console.log(quote.author);
+  console.log(quote.quote);
+  res.sendStatus(200); // reply, says hey that worked ex. 404 page not found, 500 check server
+  //status code is between () above
+  // TODO: Add to quotesData.
+}); // post = share with server  from user
+// the body = the actual content being sent to server
+/// post is the verb/ method
+// url=path= '/quotes' in this situation
+//endpoints/route = method and url/path
