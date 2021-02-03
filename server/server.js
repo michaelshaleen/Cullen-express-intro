@@ -12,6 +12,9 @@ const app = express();
 // command comma shows settings in vs code
 // public is client side
 app.use(express.static('server/public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//set up incantation
 
 app.listen(5000, function () {
   console.log('I listen', 5000);
@@ -21,3 +24,4 @@ app.listen(5000, function () {
 //run:
 // killall -9 node
 // ...and try again
+//modules help keep things seperated and organized
