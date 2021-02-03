@@ -1,3 +1,5 @@
+//const { quoteList } = require('../../modules/quotes');
+
 $(document).ready(onReady);
 console.log('in client.js');
 
@@ -14,6 +16,27 @@ function onReady() {
     //promise to call me back later
     .then(function (response) {
       console.log('response', response);
+
+
+      for (let quote of quoteList) {
+        console.log(quote);
+        $('#quoteList').append(`
+        <li>
+         <blockquote>
+          ${quote.quote}
+         -${quote.author}
+         </blockquote>
+        </li>
+        `);
+      }
+    });
+
+   
+      
+    }
+    .catch(function() {
+      alert("whoops")
+
     });
 
   console.log('so much to do');
@@ -28,4 +51,3 @@ function onReady() {
   //ajax is function that comes w/ jq
   //take array of quotes
   // loop and append to DOM boi
-}
