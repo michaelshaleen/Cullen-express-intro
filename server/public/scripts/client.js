@@ -7,11 +7,27 @@ function onReady() {
   console.log('ready');
   fetchQuotes();
 
+  $(document).on('submit', '#newQuoteForm', onSubmit);
+
   //grab data from server
   // get all the quotes
 }
 
 console.log('so much to do');
+function onSubmit(evt) {
+  evt.preventDefault();
+
+  console.log('it is true');
+
+  let newQuote = {
+    quote: $('#quoteInput').val(),
+    author: $('#authorInput').val(), //assignment
+  };
+  console.log(newQuote, 'quote');
+  $.ajax({
+    data: console.log('eheck yes'),
+  });
+}
 
 //.then is new shit
 
