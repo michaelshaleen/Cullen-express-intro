@@ -25,8 +25,19 @@ function onSubmit(evt) {
   };
   console.log(newQuote, 'quote');
   $.ajax({
-    data: console.log('eheck yes'),
-  });
+    url: '/quotes', // whats the path/route
+    method: 'POST', //app.post
+    data: {
+      // becomes req.body requesting content
+      quote_to_add: newQuote,
+    },
+  })
+    .then(function (response) {
+      console.log('good');
+    })
+    .catch(function (error) {
+      console.log('nahhhh', error); // error with server or network
+    });
 }
 
 //.then is new shit
