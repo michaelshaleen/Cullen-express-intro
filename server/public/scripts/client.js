@@ -10,7 +10,15 @@ function onReady() {
     url: '/allTheQuotes',
     method: 'GET',
   };
-  $.ajax(ajaxOptions);
+  $.ajax(ajaxOptions)
+    //promise to call me back later
+    .then(function (response) {
+      console.log('response', response);
+    });
+
+  console.log('so much to do');
+
+  //.then is new shit
 
   // ajax need an object
   // Asynchronous Javascript and XML = ajax
